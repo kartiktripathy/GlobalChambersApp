@@ -98,7 +98,7 @@ def main():
     send_mail()
   footer="""<style>
   a:link , a:visited{
-  color: blue;
+  color: pink;
   background-color: transparent;
   text-decoration: underline;
   }
@@ -115,7 +115,7 @@ def main():
   bottom: 0;
   width: 100%;
   background-color: transparent;
-  color: black;
+  color: green;
   text-align: center;
   }
   </style>
