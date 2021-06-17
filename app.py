@@ -92,7 +92,7 @@ def main():
   C1,C2,C3 = st.beta_columns(3)
   if C1.button("Register Data"):
     dbstore()
-  if C2.button("Retieve All Existing Data"):
+  if C2.button("Retrieve All Existing Data"):
     dbretrieve()
   if C3.button("Send Mail"):
     send_mail()
