@@ -1,3 +1,4 @@
+pip3
 pyrebase4
 streamlit
 pandas
