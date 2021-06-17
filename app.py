@@ -66,7 +66,7 @@ def send_mail():
       s.quit()
 
 def main():
-  st.image("logo.png")
+  st.image("logo.jpg")
   st.title("Global Chamber Intro Management System")
   
   st.header("Basic Details")
