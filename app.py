@@ -110,7 +110,6 @@ def main():
   }
 
   .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -120,7 +119,7 @@ def main():
   }
   </style>
   <div class="footer">
-  <p>Developed by <a style='display: block; text-align: center;' href="https://www.linkedin.com/in/kartik-tripathi-964806121/" target="_blank">Kartik Tripathi</a></p>
+  <p>Developed by: <a style='display: block; text-align: center;' href="https://www.linkedin.com/in/kartik-tripathi-964806121/" target="_blank">Kartik Tripathi</a></p>
   </div>
   """
   st.markdown(footer,unsafe_allow_html=True)
