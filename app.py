@@ -96,17 +96,9 @@ def main():
     dbretrieve()
   if C3.button("Send Mail"):
     send_mail()
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.header("")
-  st.text("Developer Contact: kartik@globalchamber.org")
+  st.header("Facing an issue with the App ?")
+  st.header("Let us know")
+  st.header("Developer Contact: kartik@globalchamber.org")
 
 if __name__ == '__main__':
   main()
