@@ -2,7 +2,6 @@ pip
 pyrebase
 streamlit
 pandas
-smtplib
 gspread
 oauth2client
 df2gspread
