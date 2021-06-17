@@ -66,7 +66,7 @@ def send_mail():
       s.quit()
 
 def main():
-  st.image("/content/drive/MyDrive/gcapp/logo.jpg")
+  st.image("logo.jpg")
   st.title("The Global Chambers Intro DBMS")
   
   st.header("Basic Details")
