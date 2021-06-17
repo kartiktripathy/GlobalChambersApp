@@ -1,5 +1,5 @@
 pip3
-pyrebase4
+pyrebase
 streamlit
 pandas
 smtplib
