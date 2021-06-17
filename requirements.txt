@@ -1,0 +1,7 @@
+pyrebase4
+streamlit
+pandas
+smtplib
+gspread
+oauth2client
+df2gspread
