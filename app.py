@@ -117,7 +117,7 @@ def main():
   bottom: 0;
   width: 100%;
   background-color: transparent;
-  color: white;
+  color: grey;
   text-align: center;
   }
   </style>
