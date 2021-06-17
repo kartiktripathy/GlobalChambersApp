@@ -97,7 +97,10 @@ def main():
   if C3.button("Send Mail"):
     send_mail()
   st.header("")
-  st.text("")
+  st.header("")
+  st.header("")
+  st.header("")
+  st.header("")
   st.text("Developer Contact: kartik@globalchamber.org")
 
 if __name__ == '__main__':
