@@ -67,7 +67,7 @@ def send_mail():
 
 def main():
   st.image("logo.jpg")
-  st.title("The Global Chambers Intro DBMS")
+  st.title("Global Chamber Intro Management System")
   
   st.header("Basic Details")
   col1, col2 = st.beta_columns(2)
@@ -96,6 +96,9 @@ def main():
     dbretrieve()
   if C3.button("Send Mail"):
     send_mail()
+  st.header("")
+  st.text("")
+  st.text("Developer Contact: kartik@globalchamber.org")
 
 if __name__ == '__main__':
   main()
