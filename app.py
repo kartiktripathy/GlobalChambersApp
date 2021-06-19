@@ -85,7 +85,7 @@ def main():
   to_person_1 = c1.text_input("Intro To (Person 1): ")
   to_person_2 = c2.text_input("Intro To (Person 2): ")
   to_email_1 = c1.text_input("To_email (Person 1): ")
-  to_email_2 = c2.text_input("To_email (Person 1): ")
+  to_email_2 = c2.text_input("To_email (Person 2): ")
   intro_by = c2.text_input("Intro By")
 #   commission = c1.slider("Commission Opportunity (%)", value = 10 )
   subject = st.text_input("Subject of the Mail: ")
