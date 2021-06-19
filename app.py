@@ -19,9 +19,7 @@ def dbstore():
   }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
-  data = {"company": company, "main_contact": main_contact, "target": target, "last_aff_date": last_aff, 
-    "date": date, "intro_to": intro_to, "From": From, "to_person": to_person, 
-    "intro by": intro_by, "commision": commission, "From_email": From_email, "To_email": to_email}
+  data = {"intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
   db.child("Data").push(data)
 
 def dbretrieve():
@@ -57,7 +55,7 @@ def dbretrieve():
 
 def send_mail():
   global li
-  li = [to_email,From_email]
+  li = [to_email_1,to_email_2]
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
       s.starttls()
@@ -69,26 +67,30 @@ def main():
   st.image("logo.jpg")
   st.title("Global Chamber Intro Management System")
   
-  st.header("Basic Details")
-  col1, col2 = st.beta_columns(2)
-  global company, main_contact, intro_by, intro_to, \
-  main_contact, target, last_aff, date, From, to_person, commission, From_email, to_email, message
-  company = col1.text_input("Enter the name of the company :")
-  main_contact = col2.text_input("Who is the main contact ?")
-  target = col1.text_input("Target of the Company")
-  last_aff = col2.text_input("Last Affiliate Date")
+#   st.header("Basic Details")
+#   col1, col2 = st.beta_columns(2)
+  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message
+#   company = col1.text_input("Enter the name of the company :")
+#   main_contact = col2.text_input("Who is the main contact ?")
+#   target = col1.text_input("Target of the Company")
+#   last_aff = col2.text_input("Last Affiliate Date")
 
   st.header("Intro Details")
-  c1, c2 = st.beta_columns((1, 2))
-  date = c1.text_input("Date of Intro")
-  intro_to = c2.text_input("Intro to (Organisation)")
-  From = c1.text_input("From")
-  From_email = c1.text_input("From_email")
-  to_person = c2.text_input("To (Person)")
-  to_email = c2.text_input("To_email")
+  c1, c2 = st.beta_columns(2)
+#   date = c1.text_input("Date of Intro")
+  intro_to_1 = c1.text_input("Intro To (Organization 1): ")
+  intro_to_2 = c2.text_input("Intro To (Organization 2): ")
+#   From = c1.text_input("From")
+#   From_email = c1.text_input("From_email")
+  to_person_1 = c1.text_input("Intro To (Person 1): "
+  to_person_2 = c2.text_input("Intro To (Person 2): ")
+  to_email_1 = c1.text_input("To_email (Person 1): ")
+  to_email_2 = c2.text_input("To_email (Person 1): ")
   intro_by = c2.text_input("Intro By")
-  commission = c1.slider("Commission Opportunity (%)", value = 10 )
-  message = st.text_area("Enter the message:")
+#   commission = c1.slider("Commission Opportunity (%)", value = 10 )
+  subject = st.text_input("Subject of the Mail: ")
+  body = st.text_area("Body of the Mail: ")
+  message = "Subject: "+subject+\n+\n+body
   C1,C2,C3 = st.beta_columns(3)
   if C1.button("Register Data"):
     dbstore()
