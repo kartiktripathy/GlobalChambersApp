@@ -90,7 +90,7 @@ def main():
 #   commission = c1.slider("Commission Opportunity (%)", value = 10 )
   subject = st.text_input("Subject of the Mail: ")
   body = st.text_area("Body of the Mail: ")
-  message = "Subject: "+subject+\n+\n+body
+  message = "Subject: "+subject+\n+\n+str(body)
   C1,C2,C3 = st.beta_columns(3)
   if C1.button("Register Data"):
     dbstore()
