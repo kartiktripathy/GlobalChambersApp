@@ -56,11 +56,14 @@ def dbretrieve():
 def send_mail():
   global li
   li = [to_email_1,to_email_2]
+  cc = [to_email_1,to_email_2]
+  toadd = []
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
       s.starttls()
+      toadd = [dest]+cc
       s.login('cesartrabanco@globalchamber.org', 'Intros2025')
-      s.sendmail('cesartrabanco@globalchamber.org', dest, message)
+      s.sendmail('cesartrabanco@globalchamber.org', toadd, message)
       s.quit()
 
 def main():
