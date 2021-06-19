@@ -61,11 +61,11 @@ def send_mail():
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
       s.starttls()
-      message = "From: cesartrabanco@globalchamber.org\r\n"
-        + "To: %s\r\n" % dest
-        + "CC: %s\r\n" % ",".join(cc)
-        + "Subject: %s\r\n" % subject
-        + "\r\n" 
+      message = "From: cesartrabanco@globalchamber.org\r\n"\
+        + "To: %s\r\n" % dest\
+        + "CC: %s\r\n" % ",".join(cc)\
+        + "Subject: %s\r\n" % subject\
+        + "\r\n" \
         + body
       s.login('cesartrabanco@globalchamber.org', 'Intros2025')
       s.sendmail('cesartrabanco@globalchamber.org', dest, message)
