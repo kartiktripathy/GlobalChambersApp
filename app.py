@@ -61,9 +61,14 @@ def send_mail():
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
       s.starttls()
-      toadd = [dest]+cc
+      message = "From: cesartrabanco@globalchamber.org\r\n"
+        + "To: %s\r\n" % dest
+        + "CC: %s\r\n" % ",".join(cc)
+        + "Subject: %s\r\n" % subject
+        + "\r\n" 
+        + body
       s.login('cesartrabanco@globalchamber.org', 'Intros2025')
-      s.sendmail('cesartrabanco@globalchamber.org', toadd, message)
+      s.sendmail('cesartrabanco@globalchamber.org', dest, message)
       s.quit()
 
 def main():
@@ -72,7 +77,7 @@ def main():
   
 #   st.header("Basic Details")
 #   col1, col2 = st.beta_columns(2)
-  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message
+  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body
 #   company = col1.text_input("Enter the name of the company :")
 #   main_contact = col2.text_input("Who is the main contact ?")
 #   target = col1.text_input("Target of the Company")
