@@ -19,7 +19,7 @@ def dbstore():
   }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
-  data = {"intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
+  data = {"date": date, intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
   db.child("Data").push(data)
 
 def dbretrieve():
@@ -55,8 +55,11 @@ def dbretrieve():
 
 def send_mail():
   global li
-  li = [to_email_1,to_email_2]
-  cc = [to_email_1,to_email_2]
+  li.append(to_email_1)
+  li.append(to_email_2)
+  if(opt_mail!=='none'):
+    li.append(opt_mail)
+  cc = li
   toadd = []
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
@@ -77,7 +80,7 @@ def main():
   
 #   st.header("Basic Details")
 #   col1, col2 = st.beta_columns(2)
-  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body
+  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body, date, opt_mail
 #   company = col1.text_input("Enter the name of the company :")
 #   main_contact = col2.text_input("Who is the main contact ?")
 #   target = col1.text_input("Target of the Company")
@@ -85,7 +88,7 @@ def main():
 
   st.header("Intro Details")
   c1, c2 = st.beta_columns(2)
-#   date = c1.text_input("Date of Intro")
+  date = c1.text_input("Date of Intro")
   intro_to_1 = c1.text_input("Intro To (Organization 1): ")
   intro_to_2 = c2.text_input("Intro To (Organization 2): ")
 #   From = c1.text_input("From")
@@ -95,6 +98,7 @@ def main():
   to_email_1 = c1.text_input("To_email (Person 1): ")
   to_email_2 = c2.text_input("To_email (Person 2): ")
   intro_by = c2.text_input("Intro By")
+  opt_mail = st.text_input("Optional email (if not enter 'none'): ")
 #   commission = c1.slider("Commission Opportunity (%)", value = 10 )
   subject = st.text_input("Subject of the Mail: ")
   body = st.text_area("Body of the Mail: ")
