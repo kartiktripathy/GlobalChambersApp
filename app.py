@@ -88,7 +88,7 @@ def main():
 #   last_aff = col2.text_input("Last Affiliate Date")
 
   st.header("Intro Details")
-  date = st.date_input("Date of Intro")
+  date = str(st.date_input("Date of Intro"))
   c1, c2 = st.beta_columns(2)
   
   intro_to_1 = c1.text_input("Intro To (Organization 1): ")
