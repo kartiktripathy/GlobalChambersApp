@@ -55,6 +55,7 @@ def dbretrieve():
 
 def send_mail():
   global li
+  li = []
   li.append(to_email_1)
   li.append(to_email_2)
   if(opt_mail!='none'):
