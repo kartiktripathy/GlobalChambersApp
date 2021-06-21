@@ -19,7 +19,7 @@ def dbstore():
   }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
-  data = {"date": date, intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
+  data = {"date": date, "intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
   db.child("Data").push(data)
 
 def dbretrieve():
