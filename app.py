@@ -58,7 +58,7 @@ def send_mail():
   li = []
   li.append(to_email_1)
   li.append(to_email_2)
-  if(opt_mail!='none'):
+  if(opt_mail!='none' or opt_mail!='None' or opt_mail!='NONE'):
     li.append(opt_mail)
   cc = li
   toadd = []
