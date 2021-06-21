@@ -88,8 +88,9 @@ def main():
 #   last_aff = col2.text_input("Last Affiliate Date")
 
   st.header("Intro Details")
+  date = st.date_input("Date of Intro")
   c1, c2 = st.beta_columns(2)
-  date = c1.text_input("Date of Intro")
+  
   intro_to_1 = c1.text_input("Intro To (Organization 1): ")
   intro_to_2 = c2.text_input("Intro To (Organization 2): ")
 #   From = c1.text_input("From")
@@ -99,7 +100,7 @@ def main():
   to_email_1 = c1.text_input("To_email (Person 1): ")
   to_email_2 = c2.text_input("To_email (Person 2): ")
   intro_by = c2.text_input("Intro By")
-  opt_mail = st.text_input("Optional email (if not enter 'none'): ")
+  opt_mail = c1.text_input("Optional email (if not enter 'none'): ")
 #   commission = c1.slider("Commission Opportunity (%)", value = 10 )
   subject = st.text_input("Subject of the Mail: ")
   body = st.text_area("Body of the Mail: ")
