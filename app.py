@@ -95,7 +95,7 @@ def main():
 #   main_contact = col2.text_input("Who is the main contact ?")
 #   target = col1.text_input("Target of the Company")
 #   last_aff = col2.text_input("Last Affiliate Date")
-
+  st.subheader("Click on the top left corner and Login first")
   st.header("Intro Details")
   date = str(st.date_input("Date of Intro"))
   c1, c2 = st.beta_columns(2)
