@@ -77,7 +77,7 @@ def send_mail():
 
 def main():
   global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body, date, opt_mail, username, name, passwd
-  st.image("/content/drive/MyDrive/gcapp/logo.jpg")
+  st.image("logo.jpg")
   st.title("Global Chamber Intro Management System")
   st.sidebar.title("User Info:")
   name = st.sidebar.text_input("Enter Name :")
