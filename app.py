@@ -19,7 +19,7 @@ def dbstore():
   }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
-  data = {"date": date, "intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": intro_by}
+  data = {"date": date, "intro_to_1": intro_to_1, "intro_to_2": intro_to_2, "to_person1": to_person_1, "to_person_2": to_person_2, "to_email_1": to_email_1, "to_email_2": to_email_2, "Intro_by": name}
   db.child("Data").push(data)
 
 def dbretrieve():
@@ -58,30 +58,39 @@ def send_mail():
   li = []
   li.append(to_email_1)
   li.append(to_email_2)
-  if(opt_mail!='none' or opt_mail!='None' or opt_mail!='NONE'):
+  if(opt_mail!='none'):
     li.append(opt_mail)
   cc = li
   toadd = []
   for dest in li:
       s = smtplib.SMTP('smtp.gmail.com', 587)
       s.starttls()
-      message = "From: cesartrabanco@globalchamber.org\r\n"\
+      message = "From: %s\r\n"% username\
         + "To: %s\r\n" % dest\
         + "CC: %s\r\n" % ",".join(cc)\
         + "Subject: %s\r\n" % subject\
         + "\r\n" \
         + body
-      s.login('cesartrabanco@globalchamber.org', 'Intros2025')
-      s.sendmail('cesartrabanco@globalchamber.org', dest, message)
-      s.quit()
+      s.login(username, passwd)
+      s.sendmail(username, dest, message)
+      s.quit()  
 
 def main():
-  st.image("logo.jpg")
+  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body, date, opt_mail, username, name, passwd
+  st.image("/content/drive/MyDrive/gcapp/logo.jpg")
   st.title("Global Chamber Intro Management System")
+  st.sidebar.title("User Info:")
+  name = st.sidebar.text_input("Enter Name :")
+  username = st.sidebar.text_input("Enter email: ")
+  passwd = st.sidebar.text_input("Enter the Password: ", type = 'password')
+  st.sidebar.text_input("Designation:")
+  st.sidebar.title("")  
+  st.sidebar.header("Issues? Contact Developer: ")
+  st.sidebar.text("Kartik Tripathi")
+  st.sidebar.text("kartik@globalchamber.org")
   
 #   st.header("Basic Details")
 #   col1, col2 = st.beta_columns(2)
-  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body, date, opt_mail
 #   company = col1.text_input("Enter the name of the company :")
 #   main_contact = col2.text_input("Who is the main contact ?")
 #   target = col1.text_input("Target of the Company")
@@ -99,7 +108,6 @@ def main():
   to_person_2 = c2.text_input("Intro To (Person 2): ")
   to_email_1 = c1.text_input("To_email (Person 1): ")
   to_email_2 = c2.text_input("To_email (Person 2): ")
-  intro_by = c2.text_input("Intro By")
   opt_mail = c1.text_input("Optional email (if not enter 'none'): ")
 #   commission = c1.slider("Commission Opportunity (%)", value = 10 )
   subject = st.text_input("Subject of the Mail: ")
@@ -118,13 +126,11 @@ def main():
   background-color: transparent;
   text-decoration: underline;
   }
-
   a:hover,  a:active {
   color: red;
   background-color: transparent;
   text-decoration: underline;
   }
-
   .footer {
   position: absolute;
   top: 100%;
@@ -145,5 +151,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-
-  
