@@ -54,29 +54,68 @@ def dbretrieve():
 
 
 def send_mail():
-  global li
-  li = []
-  li.append(to_email_1)
-  li.append(to_email_2)
+  me = 'me'
+  global cc
+  cc = []
+  cc.append(to_email_1)
+  cc.append(to_email_2)
   if(opt_mail!='none'):
-    li.append(opt_mail)
-  cc = li
-  toadd = []
-  for dest in li:
-      s = smtplib.SMTP('smtp.gmail.com', 587)
-      s.starttls()
-      message = "From: %s\r\n"% username\
-        + "To: %s\r\n" % dest\
-        + "CC: %s\r\n" % ",".join(cc)\
-        + "Subject: %s\r\n" % subject\
-        + "\r\n" \
-        + body
-      s.login(username, passwd)
-      s.sendmail(username, dest, message)
-      s.quit()  
+    cc.append(opt_mail)
+
+  s = smtplib.SMTP('smtp.gmail.com', 587)
+  s.starttls()
+  s.login(username, passwd)
+  message1 = "From: %s\r\n"% username\
+    + "To: %s\r\n" % to_email_1\
+    + "CC: %s\r\n" % to_email_2\
+    + "Subject: %s\r\n" % subject\
+    + "\r\n" \
+    + body
+  s.sendmail(username, to_email_1, message1)
+
+  message2 = "From: %s\r\n"% username\
+    + "To: %s\r\n" % to_email_2\
+    + "CC: %s\r\n" % to_email_1\
+    + "Subject: %s\r\n" % subject\
+    + "\r\n" \
+    + body
+  s.sendmail(username, to_email_2, message2)
+
+  if(opt_mail!='none'):
+    message3 = "From: %s\r\n"% username\
+    + "To: %s\r\n" % opt_mail\
+    + "CC: %s\r\n" % ",".join(cc)\
+    + "Subject: %s\r\n" % subject\
+    + "\r\n" \
+    + body
+    s.sendmail(username, opt_mail, message3)
+  
+  if(bcc_1!='none'):
+    message4 = "From: %s\r\n"% username\
+    + "To: %s\r\n" % bcc_1\
+    + "CC: %s\r\n" % ",".join(cc)\
+    + "BCC: %s\r\n" % me\
+    + "Subject: %s\r\n" % subject\
+    + "\r\n" \
+    + body
+    s.sendmail(username, bcc_1, message4)
+
+  if(bcc_2!='none'):
+    message5 = "From: %s\r\n"% username\
+    + "To: %s\r\n" % opt_mail\
+    + "CC: %s\r\n" % ",".join(cc)\
+    + "BCC: %s\r\n" % me\
+    + "Subject: %s\r\n" % subject\
+    + "\r\n" \
+    + body
+    s.sendmail(username, bcc_2, message5)
+
+  s.quit()
 
 def main():
-  global intro_to_1, intro_to_2, to_person_1, to_person_2, to_email_1, to_email_2, intro_by, message, subject, body, date, opt_mail, username, name, passwd
+  global intro_to_1, intro_to_2, to_person_1, to_person_2,\
+   to_email_1, to_email_2, intro_by, message, subject, body, date, \
+   opt_mail, username, name, passwd, bcc_1, bcc_2
   st.image("logo.jpg")
   st.title("Global Chamber Intro Management System")
   st.sidebar.title("User Info:")
@@ -88,31 +127,27 @@ def main():
   st.sidebar.header("Issues? Contact Developer: ")
   st.sidebar.text("Kartik Tripathi")
   st.sidebar.text("kartik@globalchamber.org")
-  
-#   st.header("Basic Details")
-#   col1, col2 = st.beta_columns(2)
-#   company = col1.text_input("Enter the name of the company :")
-#   main_contact = col2.text_input("Who is the main contact ?")
-#   target = col1.text_input("Target of the Company")
-#   last_aff = col2.text_input("Last Affiliate Date")
-  st.subheader("Click on the top left corner and Login first")
+
   st.header("Intro Details")
   date = str(st.date_input("Date of Intro"))
   c1, c2 = st.beta_columns(2)
   
   intro_to_1 = c1.text_input("Intro To (Organization 1): ")
   intro_to_2 = c2.text_input("Intro To (Organization 2): ")
-#   From = c1.text_input("From")
-#   From_email = c1.text_input("From_email")
+
   to_person_1 = c1.text_input("Intro To (Person 1): ")
   to_person_2 = c2.text_input("Intro To (Person 2): ")
   to_email_1 = c1.text_input("To_email (Person 1): ")
   to_email_2 = c2.text_input("To_email (Person 2): ")
+
+  bcc_1 = c1.text_input("BCC Person 1: (if not enter 'none') :")
+  bcc_2 = c2.text_input("BCC Person 2: (if not enter 'none') :")
   opt_mail = c1.text_input("Optional email (if not enter 'none'): ")
-#   commission = c1.slider("Commission Opportunity (%)", value = 10 )
+
   subject = st.text_input("Subject of the Mail: ")
   body = st.text_area("Body of the Mail: ")
   message = "Subject: "+subject+"\n\n"+body
+  
   C1,C2,C3 = st.beta_columns(3)
   if C1.button("Register Data"):
     dbstore()
