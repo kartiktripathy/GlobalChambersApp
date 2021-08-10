@@ -34,15 +34,15 @@ def dbstore():
   db.child("Data").push(data)
 
 def dbretrieve():
-config = {
-    "apiKey": "AIzaSyAEi4bInCtTYL6a3pWUu3fvHrFhxhHTppY",
-    "authDomain": "gcintroapp.firebaseapp.com",
-    "databaseURL": "https://gcintroapp-default-rtdb.firebaseio.com/",
-    "projectId": "gcintroapp",
-    "storageBucket": "gcintroapp.appspot.com",
-    "messagingSenderId": "523429056431",
-    "appId": "1:523429056431:web:5315ba05f2fee71d70a95a"
-  }
+  config = {
+      "apiKey": "AIzaSyAEi4bInCtTYL6a3pWUu3fvHrFhxhHTppY",
+      "authDomain": "gcintroapp.firebaseapp.com",
+      "databaseURL": "https://gcintroapp-default-rtdb.firebaseio.com/",
+      "projectId": "gcintroapp",
+      "storageBucket": "gcintroapp.appspot.com",
+      "messagingSenderId": "523429056431",
+      "appId": "1:523429056431:web:5315ba05f2fee71d70a95a"
+    }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
   complete_data = db.child("Data").get()
