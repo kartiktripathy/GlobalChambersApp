@@ -8,7 +8,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 
 def dbstore():
-  config = {
+  '''config = {
       "apiKey": "AIzaSyCdNjl2S-Jfhs7KddP8Zkr6I_fQA3a3qJk",
       "authDomain": "globalchambers.firebaseapp.com",
       "databaseURL": "https://globalchambers-default-rtdb.firebaseio.com",
@@ -16,6 +16,15 @@ def dbstore():
       "storageBucket": "globalchambers.appspot.com",
       "messagingSenderId": "669589600381",
       "appId": "1:669589600381:web:246770209d3b3ef2379914"
+  }'''
+  config = {
+    "apiKey": "AIzaSyAEi4bInCtTYL6a3pWUu3fvHrFhxhHTppY",
+    "authDomain": "gcintroapp.firebaseapp.com",
+    "databaseURL": "https://gcintroapp-default-rtdb.firebaseio.com/",
+    "projectId": "gcintroapp",
+    "storageBucket": "gcintroapp.appspot.com",
+    "messagingSenderId": "523429056431",
+    "appId": "1:523429056431:web:5315ba05f2fee71d70a95a"
   }
   firebase = pyrebase.initialize_app(config)
   db = firebase.database()
