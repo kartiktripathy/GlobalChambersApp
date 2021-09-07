@@ -141,7 +141,7 @@ def main():
 
   st.header("Intro Details")
   date = str(st.date_input("Date of Intro"))
-  c1, c2 = st.beta_columns(2)
+  c1, c2 = st.columns(2)
   
   intro_to_1 = c1.text_input("Intro To (Organization 1): ")
   intro_to_2 = c2.text_input("Intro To (Organization 2): ")
@@ -159,7 +159,7 @@ def main():
   body = st.text_area("Body of the Mail: ")
   message = "Subject: "+subject+"\n\n"+body
   
-  C1,C2,C3 = st.beta_columns(3)
+  C1,C2,C3 = st.columns(3)
   if C1.button("Register Data"):
     dbstore()
   if C2.button("Retrieve All Existing Data"):
