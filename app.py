@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pyrebase
+import pyrebase4 as pyrebase
 import smtplib
 import gspread
 from df2gspread import df2gspread as d2g
