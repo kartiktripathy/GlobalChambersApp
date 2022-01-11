@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gcappversion2",
+  "private_key_id": "af2507602a8f6182d5b59c494a984dfc6be60579",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAAC9WUZv1sYK4\ndwpD/0W7kpWWI9sJ7yAaYmsvNH9cX8XtRqlg8uJqjFORcJ/0/VOTzwsTYRDDp7Nv\nTu2yphT31G3K72717b2rWO+1s8Wq/QA2+YVgP/XymJEG0JL9EoWz6DabUqSvzMCS\nETbY9rJjZMIJbQFwQ7EFx91p7t3WxYY94kzrCn62QNVPrt+tPbaPGQKfjYDLmNsb\nY1LFnRvmJkzLYoXWkvHS4U8nOT+RNjZafr30B0F1Vn60PsZhvlAtE3KCwg8iB7yB\nzQCod3Sj8NdqpkrQtqkIYwnAo+QGj102grcpKD/gBf3xpmgMJ0xx+F3eoIZVbzuO\noljcIaqLAgMBAAECggEAK8d/A7gtDytQKr6d/R42aMxGRotbdRrs34dEeGmIhugh\nqfZcRcpsHS5tGbMsDgE7bu8dT+homaxiCkXdhkg/bLkn5ceNrg7tGiZ31h8tOc1h\noKdppaY/7vahzwN9GK6CBSE0XltMSPeviz7YmkU6LNa7NcoAs3gD49UMZAy+0aso\nSUhU00DmuxppzdPQAwMc6EmVsU/08+pM31e8gw2Zv40KJG2WWZ/8HMGPtk1OXWMJ\n2v4y7sKtD8Tf2n3e44n7dYiu8OYelTpR7sduViK/pi9qMBxW6kDqyBUMDHvKJ8m4\nWZJIt9qN4gsu0vC02fjERpIVM8YCd31MRUITa4kQLQKBgQDkBJdkbG4sl/SGJ88r\n9AXI+mCi88DfzdANyIx08vbUUN/1RFl7rKj5MFvxvrMYY4mYTvzsZWqvhp1Gg8LJ\n0RBZkoR7LEQytydRXATzIrNyhF//0SxiV5CPD2mcADCgABrLku0EkSAgNXxh0NRP\nj8c3xO89MpXpx5pRVarVeNh8HQKBgQDXkBPFA7C//2zZ+5rWX9WWeqWL//Qpwqs6\nioOK+K/6shoFK3lFG8iWR9Eem5Ds+v5JQxr/mQ0boBwMGJLrMheEZfr6kNBSg5Tb\n0VgZNqKdXgiZl7ymmincdFbIbTibK5bfK3eTdtF4nBGxm84U+r3V5sUsDLNZhQny\n2w5n8RbwxwKBgQDJ2OKnzHDPWwjkRZNY5mDEpBgtyDfiJtBZk0H7OSWVl65Z8VKB\nb7v5M30BCH6ERYEFak7teW2yyiipxnQFseOWV2SdoPcSKh5NIHdlQD+4TUSqMeHn\ngHqAmfU0WtqwmMcflQXqOApHWPGtqW54q9+AF/5snz4kQET0YTCkXqDNZQKBgEH9\non+6vH5alJk69FDSb9GsZEeyqK2sIb0/MDv4G++UXHDeuTZV5hdTjwpet4RE5lnJ\nSFedJC0j29I8J6YG5LoseiQA9zV7gLO2p9C4MBoa8mkK0b7zDQOnPfYHsb+XHY3e\ngbHMOx5AMQ59Ux6LEFiOWCg/DxzFpKELPKLHZK17AoGBAJUPehsOfIv5lhN8lXVw\nPX/Rl96YP6Ph4iCKA4IabVliZNYiOfLNCvvVd1+IU1d2+83A+z1vuR7TIreVOCPU\nq6RFdBP6aaIUhKmotMGFmCcRptiGtrw4tSPJfIhEJuHfJKxkd8f7BCIQ/DPaEitY\noep4q/0aVEh/2LjAwV+Pm6vj\n-----END PRIVATE KEY-----\n",
+  "client_email": "kartikversion2@gcappversion2.iam.gserviceaccount.com",
+  "client_id": "115311971602493653505",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kartikversion2%40gcappversion2.iam.gserviceaccount.com"
+}
